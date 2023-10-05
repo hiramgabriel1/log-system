@@ -19,9 +19,8 @@ class controllersData {
     }
 
     getTasks(req, res){
-        const { username } = req.params
         try {
-            res.json({ message: username })
+            res.json({ message: "hello world" })
         } catch (error) {
             throw new Error(error)            
         }
