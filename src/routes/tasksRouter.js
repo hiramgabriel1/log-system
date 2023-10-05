@@ -5,7 +5,7 @@ const controllers = new controllersData("testing");
 const path = "/api/v1";
 const routerDataCreate = Router();
 
-routerDataCreate.get(`${path}/:username`, (req, res) => {
+routerDataCreate.get(`${path}/`, (req, res) => {
   controllers.getTasks(req, res);
 });
 

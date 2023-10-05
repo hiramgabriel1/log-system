@@ -73,7 +73,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
+# .env
 .env.development.local
 .env.test.local
 .env.production.local
@@ -113,8 +113,13 @@ dist
 # FuseBox cache
 .fusebox/
 
+# thers
+src/config/configs.js
+
 # DynamoDB Local files
 .dynamodb/
+
+.env
 
 # TernJS port file
 .tern-port
