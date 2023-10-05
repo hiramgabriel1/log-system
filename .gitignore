@@ -114,7 +114,7 @@ dist
 .fusebox/
 
 # thers
-src/config/configs.js
+# src/config/configs.js
 
 # DynamoDB Local files
 .dynamodb/

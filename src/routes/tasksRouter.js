@@ -1,4 +1,5 @@
 import { Router } from "express";
+import cacheInit from "../middlewares/cache.config.js";
 import controllersData from "../controllers/data.controllers.js";
 
 const controllers = new controllersData("testing");
@@ -6,17 +7,27 @@ const path = "/api/v1";
 const routerDataCreate = Router();
 
 // TODO: endpoint to get all tasks
-routerDataCreate.get(`${path}/`, (req, res) => {
+routerDataCreate.get(`${path}/search`, cacheInit, (req, res) => {
   controllers.getTasks(req, res);
 });
 
 // TODO: endpoint to get task by title
-routerDataCreate.get(`${path}/:title`, (req, res) => {
+routerDataCreate.get(`${path}/:title`,cacheInit, (req, res) => {
   controllers.searchByTitleTask(req, res);
 });
 
+// TODO: endpoint to get task by Id
+routerDataCreate.get(`${path}/search/:id`, cacheInit, (req, res) => {
+  controllers.searchTaskById(req, res);
+});
+
+// TODO: endpoint to get order by urgency
+routerDataCreate.get(`${path}/order`, cacheInit, (req, res) => {
+  controllers.orderByUrgency(req, res);
+});
+
 // TODO: endpoint to delete task
-routerDataCreate.delete(`${path}/delete/:id`, (req, res) => {
+routerDataCreate.delete(`${path}/delete/:id`,(req, res) => {
   controllers.deleteTask(req, res);
 });
 
