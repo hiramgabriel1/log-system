@@ -16,7 +16,7 @@ routerDataCreate.get(`${path}/:title`, (req, res) => {
 });
 
 // TODO: endpoint to delete task
-routerDataCreate.delete(`${path}/:title`, (req, res) => {
+routerDataCreate.delete(`${path}/delete/:id`, (req, res) => {
   controllers.deleteTask(req, res);
 });
 
