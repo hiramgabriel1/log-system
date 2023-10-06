@@ -21,11 +21,6 @@ routerDataCreate.get(`${path}/search/:id`, cacheInit, (req, res) => {
   controllers.searchTaskById(req, res);
 });
 
-// TODO: endpoint to get order by urgency
-routerDataCreate.get(`${path}/order`, cacheInit, (req, res) => {
-  controllers.orderByUrgency(req, res);
-});
-
 // TODO: endpoint to delete task
 routerDataCreate.delete(`${path}/delete/:id`,(req, res) => {
   controllers.deleteTask(req, res);

@@ -70,7 +70,7 @@ class controllersData {
             const title = req.params.title
 
             // ? @search by id in database
-            const search = await taskModel.findOne(title)
+            const search = await taskModel.findOne({ title: title })
 
             // ? @get response
             search != null 
@@ -122,22 +122,6 @@ class controllersData {
         } catch (error) {
             throw new Error(error)
         }        
-    }
-
-    // TODO: order by urgency
-    async orderByUrgency(req, res){
-        try {
-            // ? validate if is urgency or not
-            const response = await taskModel.find()
-
-            console.log(response)
-
-            // ? @search in database and order 
-            // const response = await taskModel.find(order)
-
-        } catch (error) {
-            throw new Error(error)
-        }
     }
 }
 
